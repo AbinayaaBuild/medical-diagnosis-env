@@ -1,18 +1,20 @@
 import os
 import json
 from openai import OpenAI
-from env.environment import MedicalEnv
+from src.environment import MedicalEnv
 
 # Load environment variables
 API_BASE_URL = os.getenv("APIBASEURL")
 MODEL_NAME = os.getenv("MODELNAME")
-HF_TOKEN = os.getenv("HFTOKEN")
+HF_TOKEN = os.getenv("HFTOKEN")  # keep this as is
 
-# Initialize client
-client = OpenAI(
-    base_url=API_BASE_URL,
-    api_key=HF_TOKEN
-)
+# Initialize client ONLY if API key exists
+client = None
+if HF_TOKEN:
+    client = OpenAI(
+        base_url=API_BASE_URL,
+        api_key=HF_TOKEN
+    )
 
 env = MedicalEnv()
 
@@ -27,7 +29,6 @@ for i in range(num_cases):
     print(f"[STEP] Case {i+1}")
     print(f"[STEP] Observation: {state}")
 
-    
     prompt = f"""
 You are a medical diagnosis AI.
 
@@ -47,30 +48,54 @@ Format:
 }}
 """
 
-    #  SAFE API CALL
-    try:
-        response = client.chat.completions.create(
-            model=MODEL_NAME,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0,
-            timeout=20
-        )
+    # 🔥 SMART API + FALLBACK
+    if client:
+        try:
+            response = client.chat.completions.create(
+                model=MODEL_NAME,
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0,
+                timeout=20
+            )
 
-        output_text = response.choices[0].message.content.strip()
+            output_text = response.choices[0].message.content.strip()
 
-    except Exception as e:
-        print(f"[STEP] Error: {e}")
+        except Exception as e:
+            print(f"[STEP] API Error: {e}")
+
+            # fallback if API fails
+            output_text = json.dumps({
+                "disease": "possible condition",
+                "severity": "medium",
+                "treatment": "consult doctor",
+                "reason": "API failed, using fallback"
+            })
+    else:
+        # 🚀 NO API → DEMO MODE
+        print("[STEP] Running in demo mode (no API key)")
+
+        # simple logic-based fallback
+        symptoms = " ".join(state["symptoms"]).lower()
+
+        if "chest pain" in symptoms:
+            disease = "Heart Disease"
+        elif "fever" in symptoms:
+            disease = "Infection"
+        elif "thirst" in symptoms or "urination" in symptoms:
+            disease = "Diabetes"
+        else:
+            disease = "General illness"
 
         output_text = json.dumps({
-            "disease": "unknown",
-            "severity": "uncertain",
+            "disease": disease,
+            "severity": "medium",
             "treatment": "consult doctor",
-            "reason": "API failure"
+            "reason": "Rule-based demo prediction"
         })
 
     print(f"[STEP] Model Output: {output_text}")
 
-    #  SAFE JSON PARSING 
+    # SAFE JSON PARSING
     try:
         action = json.loads(output_text)
     except:
