@@ -151,13 +151,6 @@ python baseline/baseline.py
 Run inference:
 python inference.py
 
-
-🏁 Result
-
-The system successfully evaluates multiple patient cases and produces accurate diagnoses using a structured reward mechanism.
-
-It demonstrates:
-
 🏁 Result
 
 The system successfully evaluates multiple patient cases and produces accurate diagnoses using a structured reward mechanism.
