@@ -151,6 +151,9 @@ python baseline/baseline.py
 Run inference:
 python inference.py
 
+🚀 Runs instantly without API key (demo mode supported)
+--------
+
 🏁 Result
 
 The system successfully evaluates multiple patient cases and produces accurate diagnoses using a structured reward mechanism.
