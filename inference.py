@@ -4,9 +4,9 @@ from openai import OpenAI
 from src.environment import MedicalEnv
 
 # Load environment variables
-API_BASE_URL = os.getenv("APIBASEURL")
-MODEL_NAME = os.getenv("MODELNAME")
-HF_TOKEN = os.getenv("HFTOKEN")  # keep this as is
+API_BASE_URL = os.getenv("API_BASE_URL")
+MODEL_NAME = os.getenv("MODEL_NAME")
+HF_TOKEN = os.getenv("HF_TOKEN")  
 
 # Initialize client ONLY if API key exists
 client = None
