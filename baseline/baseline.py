@@ -4,7 +4,7 @@ import os
 # Fix import path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from env.environment import MedicalEnv
+from src.environment import MedicalEnv
 
 
 def simple_rule_based_model(state):
@@ -139,7 +139,7 @@ def run_simulation():
             treatment = "consult doctor"
             severity = "uncertain"
 
-        reason_text = "Patient has " + ", ".join(symptoms)
+        reason_text = f"Symptoms include {', '.join(symptoms)} suggesting {disease}"
 
         action = {
             "disease": disease,
