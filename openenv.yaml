@@ -1,0 +1,18 @@
+name: "Medical Diagnosis Environment"
+description: "AI environment that predicts diseases based on symptoms and patient history"
+version: "1.0"
+
+observation:
+  age: integer
+  symptoms: list
+  history: list
+
+action:
+  disease: string
+  severity: string
+  treatment: string
+  reason: string
+
+reward:
+  type: float
+  range: [0.0, 1.0]
