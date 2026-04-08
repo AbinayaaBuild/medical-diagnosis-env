@@ -1,0 +1,139 @@
+[
+  {
+    "difficulty": "easy",
+    "age": 22,
+    "symptoms": ["fever", "cough", "tiredness"],
+    "history": [],
+    "disease": "flu",
+    "severity": "mild",
+    "treatment": "rest and fluids"
+  },
+  {
+    "difficulty": "easy",
+    "age": 30,
+    "symptoms": ["sneezing", "runny nose"],
+    "history": [],
+    "disease": "common cold",
+    "severity": "mild",
+    "treatment": "antihistamines"
+  },
+  {
+    "difficulty": "easy",
+    "age": 25,
+    "symptoms": ["itching", "rash"],
+    "history": [],
+    "disease": "allergy",
+    "severity": "mild",
+    "treatment": "antihistamines"
+  },
+  {
+    "difficulty": "easy",
+    "age": 28,
+    "symptoms": ["headache", "sensitivity to light"],
+    "history": [],
+    "disease": "migraine",
+    "severity": "mild",
+    "treatment": "pain relievers"
+  },
+  {
+    "difficulty": "easy",
+    "age": 35,
+    "symptoms": ["sore throat", "fever"],
+    "history": [],
+    "disease": "throat infection",
+    "severity": "mild",
+    "treatment": "warm fluids and rest"
+  },
+
+  {
+    "difficulty": "medium",
+    "age": 45,
+    "symptoms": ["chest pain", "shortness of breath"],
+    "history": [],
+    "disease": "angina",
+    "severity": "moderate",
+    "treatment": "medication and rest"
+  },
+  {
+    "difficulty": "medium",
+    "age": 33,
+    "symptoms": ["fever", "body pain", "headache"],
+    "history": [],
+    "disease": "dengue",
+    "severity": "moderate",
+    "treatment": "hydration and monitoring"
+  },
+  {
+    "difficulty": "medium",
+    "age": 40,
+    "symptoms": ["frequent urination", "increased thirst"],
+    "history": [],
+    "disease": "diabetes",
+    "severity": "moderate",
+    "treatment": "diet control and medication"
+  },
+  {
+    "difficulty": "medium",
+    "age": 29,
+    "symptoms": ["abdominal pain", "vomiting"],
+    "history": [],
+    "disease": "food poisoning",
+    "severity": "moderate",
+    "treatment": "hydration and rest"
+  },
+  {
+    "difficulty": "medium",
+    "age": 50,
+    "symptoms": ["persistent cough", "weight loss"],
+    "history": [],
+    "disease": "tuberculosis",
+    "severity": "moderate",
+    "treatment": "long-term antibiotics"
+  },
+
+  {
+    "difficulty": "hard",
+    "age": 60,
+    "symptoms": ["chest pain", "sweating", "nausea"],
+    "history": ["diabetes", "smoking"],
+    "disease": "heart attack",
+    "severity": "severe",
+    "treatment": "immediate hospitalization"
+  },
+  {
+    "difficulty": "hard",
+    "age": 55,
+    "symptoms": ["shortness of breath", "fatigue"],
+    "history": ["high blood pressure"],
+    "disease": "heart failure",
+    "severity": "severe",
+    "treatment": "urgent medical care"
+  },
+  {
+    "difficulty": "hard",
+    "age": 48,
+    "symptoms": ["fever"],
+    "history": ["diabetes"],
+    "disease": "unknown",
+    "severity": "uncertain",
+    "treatment": "need more information"
+  },
+  {
+    "difficulty": "hard",
+    "age": 65,
+    "symptoms": ["confusion", "memory loss"],
+    "history": [],
+    "disease": "alzheimer's",
+    "severity": "severe",
+    "treatment": "supportive care"
+  },
+  {
+    "difficulty": "hard",
+    "age": 52,
+    "symptoms": ["severe headache", "blurred vision"],
+    "history": ["high blood pressure"],
+    "disease": "stroke",
+    "severity": "severe",
+    "treatment": "immediate hospitalization"
+  }
+]
