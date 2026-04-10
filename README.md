@@ -4,7 +4,9 @@ emoji: 🏥
 colorFrom: blue
 colorTo: green
 sdk: docker
-app_file: baseline/baseline.py
+sdk_version: "1.0"
+python_version: "3.10"
+app_file: inference.py
 pinned: false
 tags:
   - openenv
